@@ -20,4 +20,18 @@ describe('Display component', () => {
 
     expect(output).toBeDefined();
   });
+
+  it('should show closed when closed', () => {
+    const { getByText } = render(<Display closed={true} />);
+    const output = getByText(/closed/i);
+
+    expect(output).toBeDefined();
+  });
+
+  it('should show open when opened', () => {
+    const { getByText } = render(<Display closed={false} />);
+    const output = getByText(/open/i);
+
+    expect(output).toBeDefined();
+  });
 });
